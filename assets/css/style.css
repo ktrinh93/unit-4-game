@@ -1,0 +1,42 @@
+#title {
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+}
+
+.paladins {
+    margin-top: 13px;
+}
+
+#title-box, #instructions-box, #crystals, #tally, #player-score {
+    border: 1px solid black;
+    margin: 20px;
+    margin-top: 0px;
+}
+
+#title-box {
+    margin-top: 20px;
+}
+
+#tally {
+    border: none;
+}
+
+#random-number {
+    border: 1px solid black;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#win-loss {
+    border: 1px solid black;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#crystals {}
+
+.click-crystals {
+    height: 100%;
+    width: 100%;
+}
