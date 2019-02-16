@@ -1,3 +1,7 @@
+body {
+    background-image: url("../images/background.jpg");
+}
+
 #title {
     text-align: center;
     padding: 10px;
@@ -12,6 +16,13 @@
     border: 1px solid black;
     margin: 20px;
     margin-top: 0px;
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.translucent {
+    opacity: 0.8;
 }
 
 #title-box {
