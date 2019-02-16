@@ -20,21 +20,14 @@ $(document).ready(function() {
     // boolean to control end of game button lockouts
     var timeout = false;
 
+    var crystalValues = [];
+
     // function to start/restart/reset the game state
     function start() {
         // assigns target number [19-120]
         randomNum.text(generateRandomNumber(19, 120));
-        // assigns each crystal [1-12]
-        blueValue = generateRandomNumber(1, 12);
-        redValue = generateRandomNumber(1, 12);
-        greenValue = generateRandomNumber(1, 12);
-        purpleValue = generateRandomNumber(1, 12);
         
-        // console logging for ease of testing
-        console.log("blueValue: " + blueValue);
-        console.log("redValue: " + redValue);
-        console.log("greenValue: " + greenValue);
-        console.log("purpleValue: " + purpleValue);
+        assignCrystalValues();
 
         // resets score, win/loss text, and timeout lock
         score.text(0);
@@ -104,5 +97,37 @@ $(document).ready(function() {
     // helper function to generate random numbers between bounds
     function generateRandomNumber(lower, upper) {
         return Math.floor((Math.random()*upper)+lower);
+    }
+
+    // helper function to assign *unique* values to crystals
+    function assignCrystalValues() {
+
+        // assigns each crystal a unique value [1-12]
+        blueValue = generateRandomNumber(1, 12);
+        crystalValues.push(blueValue);
+
+        redValue = generateRandomNumber(1, 12);
+        while(crystalValues.includes(redValue)) {
+            redValue = generateRandomNumber(1, 12);
+        }
+        crystalValues.push(redValue);
+
+        greenValue = generateRandomNumber(1, 12);
+        while(crystalValues.includes(greenValue)) {
+            greenValue = generateRandomNumber(1, 12);
+        }
+        crystalValues.push(greenValue);
+
+        purpleValue = generateRandomNumber(1, 12);
+        while(crystalValues.includes(purpleValue)) {
+            purpleValue = generateRandomNumber(1, 12);
+        }
+        crystalValues.push(purpleValue);
+
+        // console logging for ease of testing
+        console.log("blueValue: " + blueValue);
+        console.log("redValue: " + redValue);
+        console.log("greenValue: " + greenValue);
+        console.log("purpleValue: " + purpleValue);
     }
 });
